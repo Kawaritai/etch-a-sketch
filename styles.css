@@ -1,0 +1,39 @@
+.container {
+  background: black;
+  display: inline-block;
+  border: 2px solid black;
+  margin: auto;
+}
+.grid {
+  display: grid;
+  grid-gap: 1px;
+  width: 700px;
+  height: 700px;
+}
+.cell {
+  /* center the cell content */
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-div hr {
+    width: 100%;
+    border-width: 0;
+}
+
+#new-btn {
+    margin: auto;
+}
