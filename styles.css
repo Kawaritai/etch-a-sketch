@@ -1,14 +1,20 @@
-.container {
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+body {
+  background-color: rgb(252, 231, 231) !important;
+}
+
+.grid-container {
   background: black;
   display: inline-block;
-  border: 2px solid black;
-  margin: auto;
+  border: 3px solid black;
+  margin: auto !important;
 }
 .grid {
   display: grid;
   grid-gap: 1px;
-  width: 700px;
-  height: 700px;
+  width: 40vw;
+  height: 40vw;
 }
 .cell {
   /* center the cell content */
@@ -27,13 +33,57 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 90vw;
+  margin: auto;
+  padding-left: 150px !important;
+  background-color: white;
 }
 
 .center-div hr {
-    width: 100%;
-    border-width: 0;
+  width: 100%;
+  border-width: 0;
 }
 
 #new-btn {
-    margin: auto;
+  margin: auto;
+}
+
+.nes-btn {
+  margin: 20px 0px !important;
+}
+
+.nes-btn:hover::after {
+  box-shadow: inset -4px -4px #adafbc !important;
+}
+
+#blk-btn {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#rgb-btn {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    rgb(200, 200, 131),
+    rgb(105, 169, 105),
+    rgb(99, 99, 231),
+    rgb(130, 77, 168),
+    rgb(212, 43, 212)
+  );
+}
+
+#gray-btn {
+  background-color: rgb(220, 220, 220);
+}
+
+.nes-btn:hover {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC)
+      14 0,
+    pointer;
+}
+
+.rounded-xl {
+  border-radius: 1.25rem;
 }

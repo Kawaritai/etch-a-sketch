@@ -4,19 +4,22 @@
     <head>
         <title>Etch-a-sketch</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="icon.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     </head>
     <body>
-        <h1 class="text-center">Etch-a-sketch</h1>
-        <div class="center-div">
-            <div>
-                <button data-mode="black" class="option">BLACK</button>
-                <button data-mode="rgb" class="option">RGB</button>
-                <button data-mode="gray" class="option">GRAYSCALE</button>
-                <button id="clear-btn">Clear grid</button>
-                <button id="new-btn">Change grid size</button>
+        <h1 class="text-center mt-4" id="title">Etch-a-sketch</h1>
+        <div class="center-div nes-container rounded-xl">
+            <div class="button-group mt-2 d-flex align-items-start flex-column">
+                <h2>OPTIONS</h2>
+                <button data-mode="black" class="mode-option nes-btn" id="blk-btn">BLACK</button>
+                <button data-mode="rgb" class="mode-option nes-btn" id= "rgb-btn">RGB</button>
+                <button data-mode="gray" class="mode-option nes-btn" id="gray-btn">GRAYSCALE</button>
+                <button id="clear-btn" class="nes-btn">Clear grid</button>
+                <button id="new-btn" class="nes-btn">Change grid size</button>
             </div>
-            <hr>
-            <div class="container">
+            <div class="grid-container">
             </div>
         </div>
         
