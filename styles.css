@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 
 body {
-  background-color: rgb(252, 231, 231) !important;
+  background-color: rgb(228, 114, 114) !important;
 }
 
 .grid-container {
@@ -10,12 +10,14 @@ body {
   border: 3px solid black;
   margin: auto !important;
 }
+
 .grid {
   display: grid;
   grid-gap: 1px;
   width: 40vw;
   height: 40vw;
 }
+
 .cell {
   /* center the cell content */
   background-color: white;
@@ -36,7 +38,7 @@ body {
   width: 90vw;
   margin: auto;
   padding-left: 150px !important;
-  background-color: white;
+  background-color: rgb(247, 247, 247);
 }
 
 .center-div hr {
@@ -44,11 +46,7 @@ body {
   border-width: 0;
 }
 
-#new-btn {
-  margin: auto;
-}
-
-.nes-btn {
+.button-group button {
   margin: 20px 0px !important;
 }
 

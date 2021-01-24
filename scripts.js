@@ -3,6 +3,7 @@ let mode = {
   black: true,
   rgb: false,
   gray: false,
+  eraser: false,
 };
 
 function newGrid(num) {
@@ -26,31 +27,28 @@ function newGrid(num) {
 
 function trail() {
   if (mode.black) {
-    this.style.backgroundColor = "black";
+    eraseCell(this);
+    this.style.opacity = 0;
   } else if (mode.rgb) {
+    eraseCell(this);
     this.style.backgroundColor = `rgba(${rand_255()},${rand_255()},${rand_255()}, 1)`;
-  } else if (mode.gray) {
-    let initial = this.style.backgroundColor;
-    // Make cell grayscale
-    if (initial.slice(0, 4) !== "rgba") {
-      this.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
+  } else if (mode.gray && this.style.opacity !== "0") {
+    if (!this.dataset.hasOwnProperty("shade")) {
+      this.dataset.shade = 0;
     }
-    // Add colour to already grayscale cell
-    else {
-      opacity = parseFloat(initial.split(",")[3].slice(1, -1));
-      if (opacity != 0) {
-        this.style.backgroundColor = `rgba(255, 255, 255, ${opacity - 0.1})`;
+    if (this.dataset.shade < 10) {
+      shade = parseInt(++this.dataset.shade);
+      this.style.opacity = (10 - shade) / 10;
+      if (this.style.opacity === "0") {
+        this.style.removeProperty("background-color");
       }
     }
   }
-  this.classList.add("changed");
+  (mode.eraser) ? eraseCell(this) : this.classList.add("changed");
 }
 
 document.querySelector("#clear-btn").addEventListener("click", () => {
-  document.querySelectorAll(".changed").forEach((cell) => {
-    cell.style.backgroundColor = "white";
-    cell.classList.remove("changed");
-  });
+  document.querySelectorAll(".changed").forEach((cell) => eraseCell(cell));
 });
 
 document.querySelector("#new-btn").addEventListener("click", () => {
@@ -81,6 +79,12 @@ document.querySelectorAll(".mode-option").forEach((option) => {
 
 function rand_255() {
   return Math.floor(Math.random() * 256);
+}
+
+function eraseCell(cell) {
+  cell.removeAttribute("style");
+  cell.removeAttribute("data-shade");
+  cell.classList.remove("changed");
 }
 
 newGrid(16);
