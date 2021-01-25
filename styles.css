@@ -41,11 +41,6 @@ body {
   background-color: rgb(247, 247, 247);
 }
 
-.center-div hr {
-  width: 100%;
-  border-width: 0;
-}
-
 .button-group button {
   margin: 20px 0px !important;
 }
@@ -55,7 +50,7 @@ body {
 }
 
 #blk-btn {
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(40, 40, 40);
   color: white;
 }
 
@@ -72,7 +67,7 @@ body {
   );
 }
 
-#gray-btn {
+#darken-btn {
   background-color: rgb(220, 220, 220);
 }
 

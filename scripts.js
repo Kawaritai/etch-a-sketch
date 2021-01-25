@@ -2,7 +2,7 @@
 let mode = {
   black: true,
   rgb: false,
-  gray: false,
+  darken: false,
   eraser: false,
 };
 
@@ -32,7 +32,7 @@ function trail() {
   } else if (mode.rgb) {
     eraseCell(this);
     this.style.backgroundColor = `rgba(${rand_255()},${rand_255()},${rand_255()}, 1)`;
-  } else if (mode.gray && this.style.opacity !== "0") {
+  } else if (mode.darken && this.style.opacity !== "0") {
     if (!this.dataset.hasOwnProperty("shade")) {
       this.dataset.shade = 0;
     }
@@ -54,11 +54,14 @@ document.querySelector("#clear-btn").addEventListener("click", () => {
 document.querySelector("#new-btn").addEventListener("click", () => {
   let num;
   do {
-    num = prompt("Enter a number");
+    num = prompt("Enter a number (1-100)");
     if (num > 100) {
       alert("Number must not exceed 100.");
     }
-  } while (isNaN(num) || num > 100);
+    else if (num < 1 && num !== null) {
+      alert("Number must be greater than 0.");
+    }
+  } while (isNaN(num) || num > 100 || num < 1 & num !== null);
   if (num) {
     num = Math.round(num);
     newGrid(num);
