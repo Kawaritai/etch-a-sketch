@@ -7,6 +7,6 @@
 - Choose between options: 
     - Black
     - Random RGB
-    - Grayscale
-- Start over by clearing the grid
+    - Darken
+- Start over by using the eraser tool or clearing the grid
 - Change grid size
