@@ -27,7 +27,6 @@ function newGrid(num) {
 
 function trail() {
   if (mode.black) {
-    eraseCell(this);
     this.style.opacity = 0;
   } else if (mode.rgb) {
     eraseCell(this);
